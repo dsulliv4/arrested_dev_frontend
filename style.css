@@ -1,0 +1,144 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+
+
+
+
+body{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Patua One', cursive;
+    background-image: url('https://wallpapercave.com/wp/wp3728431.jpg');
+}
+ 
+
+  
+  
+  
+  
+  
+  .container {
+    background-color: rgba(255, 255, 255, 0.875);
+    width: 50%;
+    position: absolute;
+    padding: 30px 30px 7.5px;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    text-align: center;
+  }
+  
+  .quiz {
+    position: static;
+    margin-top: 50px;
+    transform: translateX(50%);
+  }
+  
+  .quiz_container {
+    padding: 30px 30px 20px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    display: none;
+  }
+  
+  .form-control {
+    margin-bottom: -30px;
+  }
+  
+  .enter-game-button {
+    margin: 20px 0;
+    border: 1px solid #d3d3d3;
+  }
+  
+  .round_stats {
+    font-weight: bold;
+    padding-bottom: 20px;
+  }
+  
+  .user_stats {
+    font-weight: normal;
+  }
+  
+  .user_input_info {
+    text-align: left;
+    padding: 0px 40px;
+  }
+  
+  .question_info {
+    margin-bottom: 0;
+  }
+  
+  .answer_info {
+    font-style: italic;
+  }
+
+  .gameDirections {
+    text-align: center;
+}
+
+ #hide {
+     display: none;
+ }
+  .hideEle{
+    display: none;
+
+  }
+  .showEle{
+      display:block;
+  }
+  #welcome {
+    background-image: url(519e27566bb3f7624c00000d.jpeg);
+    background-color: #000;
+  }
+  
+  #enter-question {
+    text-align: center;
+  }
+
+  #header {
+    font-family: "Patua-One";
+    font-size: 50px;
+    font-weight: normal;
+  }
+  
+  #title {
+    font-family: "Lumos";
+    font-size: 40px;
+    font-weight: normal;
+  }
+  
+  #speaker {
+    display: none;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    height: 40px;
+    width: 40px;
+  }
+  
+  #r1 {
+    padding-top: 20px;
+  }
+  
+
+  #quiz_form {
+    padding-top: 30px;
+    margin: 0px 40px;
+    text-align: left;
+  }
+  
+  #quiz_form div {
+    margin-left: 25px;
+  }
+  
+  #submit_round {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+
+  
