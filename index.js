@@ -8,8 +8,8 @@ window.addEventListener('load', function(event) {
   function showGameDirections(playGameButton) {
     let gameDirections = document.getElementById('gameDirections');
     gameDirections.classList.remove('hide');
-    playGameButton.classList.add('hide');
-    readyGame();
+   playGameButton.classList.add('hide'); 
+    readyGame();  
   }
   function readyGame() { // add event listener to the start button
     let startButton = document.getElementById('startGame');
@@ -17,11 +17,7 @@ window.addEventListener('load', function(event) {
       showQuestion(this);
     })
   }
-  window.addEventListener('load',function(event){
-      let yesbtn = document.getElementById('yes');
-      yesbtn.addEventListener('click',function(event){
-        showinstruction();
-      })
+
 
 
     });
