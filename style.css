@@ -8,6 +8,21 @@ body {
   background-image: url("https://wallpapercave.com/wp/wp3728431.jpg");
   background-size: cover;
 }
+.tobiasImage {
+  width: 20%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#tobiasCrying {
+  display: block;
+  top: 0;
+  text-align: center;
+  margin: 0 auto;
+  width: 30%;
+  height: 30%;
+}
 
 .invisible{
   display: none;
@@ -31,14 +46,18 @@ body {
 
 .gameDirections {
   background-color: white;
+  display: block;
+  top: 0;
   text-align: center;
+  margin: -100px 300px 500px 300px;
+  border-radius: 10px;
 }
 
 #hide {
   display: none;
 }
 .hideEle {
-  display: none;
+  visibility: hidden;
 }
 .showEle {
   display: block;
@@ -74,3 +93,8 @@ body {
   width: 100%;
   height: 30px;
 }
+
+#stepTwo {
+  border-radius: 10px;
+}
+

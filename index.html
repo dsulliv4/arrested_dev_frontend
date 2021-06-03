@@ -9,11 +9,11 @@
 
   <body>
     <div id="trivia-header">Welcome to Arrested Development Trivia!</div>
-    <div id="enter-question stepOne">
+    <div id="stepOne">
       <h2>Would you like to play a game?</h2>
 
-      <button id="yes">Yes</button>
-      <button id="no">No</button>
+      <button id="yes" class="gamePlayBtns">Yes</button>
+      <button id="no" class="gamePlayBtns">No</button>
       <br />
       <br />
 
@@ -26,6 +26,20 @@
 
       <!-- <div id="quiz-container">Hello!</div> -->
     </div>
+
+    <div class="form-group container quiz quiz_container" id="quiz_container">
+      <form id="quiz_form">
+        
+      </form>
+    </div>
+
+
+    <div id="tobiasImage">
+      <img
+        id="tobiasCrying" class="hideEle"
+        src="https://teenscanwritetoo.files.wordpress.com/2014/11/tumblr_inline_mnjolkeens1qz4rgp.gif?w=300&h=150"
+      />
+      </div>
 
     <div id="stepTwo" class="gameDirections hideEle">
       <div class="info-title"><span>Some Rules of this Quiz</span></div>
@@ -52,6 +66,8 @@
     <div class="form-group container quiz quiz_container" id="quiz_container">
       <form id="quiz_form"></form>
     </div>
+
+    
 
     <figure id="music-player">
       <audio controls>
