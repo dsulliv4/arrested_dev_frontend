@@ -26,6 +26,28 @@ const readyNoButton = () => {
 
 const audioPLay = () => {
     const audio = document.querySelector('audio');
-    audio.
 
+}
+
+
+
+const getQuestions = () => {
+  fetch('http://localhost:3000/questions')
+  .then(res => res.json() )
+  .then(data => {
+    let question = "";
+    data.map(function(qInfo){
+      question += `<div> <h3> ${qInfo.content } </h3> </div> `
+    })
+    let qContainer=  document.getElementById('quiz-container');
+    qContainer.innerHTML= question;
+  })
+}
+
+const continueBtn = () => {
+  const button = document.querySelector('#continue');
+  button.addEventListener("click", () => {
+    getQuestions();
+
+  });
 }

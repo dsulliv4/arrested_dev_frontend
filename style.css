@@ -44,6 +44,11 @@ body {
   transform: translateX(50%);
 }
 
+#quiz_form div {
+  margin-left: 25px;
+}
+
+
 .gameDirections {
   background-color: white;
   display: block;
