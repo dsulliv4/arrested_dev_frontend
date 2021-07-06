@@ -1,15 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Patua+One&display=swap");
 
 body {
-  margin: 0;
+  --hue: var(--hue-neutral);
   padding: 0;
-  box-sizing: border-box;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: hsl(var(--hue), 100%, 20%);
   font-family: "Patua One", cursive;
   background-image: url("https://wallpapercave.com/wp/wp3728431.jpg");
   background-size: cover;
 }
+
+h2 {
+  text-align: center;
+}
+
 .tobiasImage {
-  width: 20%;
+  width: 40%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -17,17 +28,16 @@ body {
 
 #tobiasCrying {
   display: block;
-  top: 0;
+  top: 10px;
   text-align: center;
   margin: 0 auto;
-  width: 30%;
-  height: 30%;
+  width: 40%;
+  height: 40%;
 }
 
-.invisible{
+.invisible {
   display: none;
 }
-
 
 #quiz-container {
   background-color: white;
@@ -47,7 +57,6 @@ body {
 #quiz_form div {
   margin-left: 25px;
 }
-
 
 .gameDirections {
   background-color: white;
@@ -90,16 +99,52 @@ body {
   bottom: 0px;
 }
 
-#trivia-header {
+#welcome-header {
   background-color: #ffffff;
   font-size: 20px;
-  text-align: center;
   padding: 10px;
   width: 100%;
   height: 30px;
+  margin: 0 auto;
+  position: absolute;
+  text-align: center;
 }
 
 #stepTwo {
   border-radius: 10px;
 }
 
+#stepOne {
+  width: 100%;
+  /* margin-left: 26%; */
+  top: 50px;
+  position: absolute;
+}
+#stepOne h2 {
+  text-align: center;
+}
+
+#returnMain {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#enter-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.info-title {
+  font-size: 28px;
+}
+
+.info {
+
+}
+
+#info {
+  font-size: 20px;
+}

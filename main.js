@@ -13,12 +13,16 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("hello");
   stepOne();
   readyNoButton();
+  continueBtn();
+  exitMain();
+  returnMain();
 });
 
 const readyNoButton = () => {
   const button = document.querySelector("#no");
     button.addEventListener("click", () => {
-     document.querySelector("#tobiasCrying").classList.remove("hideEle")
+     document.querySelector('#tobiasCrying').classList.remove("hideEle")
+     document.querySelector('#returnBtn').classList.remove("hideEle")
      const stepOneDiv = document.querySelector("#stepOne");
      stepOneDiv.classList.add('hideEle');
     })
@@ -51,3 +55,20 @@ const continueBtn = () => {
 
   });
 }
+
+const returnMain = () => {
+  const button = document.querySelector("#returnMain")
+  button.addEventListener("click", () => {
+    window.location = 'index.html';
+  });
+
+
+}
+
+const exitMain = () => {
+  const button = document.querySelector("#quit")
+  button.addEventListener("click", () => {
+    window.location = 'index.html';
+  });
+}
+
