@@ -39,13 +39,13 @@ h2 {
   display: none;
 }
 
-#quiz-container {
+#question-container {
   background-color: white;
-  height: 50px;
-  width: 100px;
+  padding: 100px;
   border-radius: 15px;
-  margin: 0 auto;
-  text-align: center;
+  margin: 100px;
+  text-align: start;
+  
 }
 
 .quiz {
