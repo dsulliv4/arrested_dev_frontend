@@ -40,13 +40,9 @@ h2 {
 }
 
 #question-container {
-  background-color: white;
-  padding: 100px;
-  border-radius: 15px;
-  margin: 100px;
-  text-align: start;
-  
 }
+
+#element.style.css = 
 
 .quiz {
   position: static;
