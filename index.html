@@ -13,67 +13,79 @@
       <h2>Would you like to play a game?</h2>
 
       <div id="enter-buttons">
-      <button id="yes" class="gamePlayBtns">Yes</button>
-      <button id="no" class="gamePlayBtns">No</button></div>
+        <button id="yes" class="gamePlayBtns">Yes</button>
+        <button id="no" class="gamePlayBtns">No</button>
+      </div>
       <br />
       <br />
-
- 
     </div>
 
-   
     <div class="container">
-      <div id="question-container" class="">
-        <div id="question" class ="">Question</div>
-        <div id="answer-buttons" class="btn-grid">
-          <button class="btn hideEle">Answer 1</button>
-          <button class="btn hideEle">Answer 2</button>
-          <button class="btn hideEle">Answer 3</button>
-          <button class="btn hideEle">Answer 4</button>
+      <form id="regForm" action="">
+        <div id="question-container" class="">
+          <div class="tab" id="tab1"></div>
+          <div class="tab" id="tab2"></div>
+          <div class="tab" id="tab3"></div>
+
+          <div style="overflow: auto">
+            <div style="float: right">
+              <button type="button" id="prevBtn" onclick="nextPrev(-1)">
+                Previous
+              </button>
+              <button type="button" id="nextBtn" onclick="nextPrev(1)">
+                Next
+              </button>
+            </div>
+          </div>
+          <!-- Circles which indicates the steps of the form: -->
+          <div style="text-align: center; margin-top: 40px">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+          </div>
         </div>
+      </form>
+
+      <div id="tobiasImage">
+        <img
+          id="tobiasCrying"
+          class="hideEle"
+          src="https://teenscanwritetoo.files.wordpress.com/2014/11/tumblr_inline_mnjolkeens1qz4rgp.gif?w=300&h=150"
+        />
       </div>
 
-
-    <div id="tobiasImage">
-      <img
-        id="tobiasCrying" class="hideEle"
-        src="https://teenscanwritetoo.files.wordpress.com/2014/11/tumblr_inline_mnjolkeens1qz4rgp.gif?w=300&h=150"
-      />
+      <div id="returnMain">
+        <button class="btn hideEle" id="returnBtn">Return To Main Page</button>
       </div>
 
-    <div id= "returnMain"> <button class="btn hideEle" id="returnBtn">Return To Main Page</button> </div>
+      <div id="stepTwo" class="gameDirections hideEle">
+        <div class="info-title"><span>Some Rules of this Quiz</span></div>
+        <div class="info-list">
+          <div class="info">
+            <br />
+            <br />
+            1. The only way to move on to the next round is to answer all 3
+            questions correctly.
+            <br />
+          </div>
 
-    <div id="stepTwo" class="gameDirections hideEle">
-      <div class="info-title"><span>Some Rules of this Quiz</span></div>
-      <div class="info-list">
-        <div class="info">
-          <br>
-          <br>
-          1. The only way to move on to the next round is to answer all 3
-          questions correctly.
-          <br>
+          <br />
+          <div class="info">2. There are 3 rounds total.</div>
+          <br />
+          <div class="info">
+            3. If you answer every question right, you win. Otherwise, you have
+            to try again.
+            <br />
+          </div>
+          <br />
         </div>
-
-        <br>
-        <div class="info">2. There are 3 rounds total.</div>
-        <br>
-        <div class="info">
-          3. If you answer every question right, you win. Otherwise, you have to
-          try again.
-          <br>
+        <div class="buttons">
+          <button id="quit">Exit Quiz</button>
+          <button id="continue">Continue</button>
         </div>
-        <br>
-      </div>
-      <div class="buttons">
-        <button id="quit">Exit Quiz</button>
-        <button id="continue">Continue</button>
       </div>
     </div>
-
-  </div>
-
-
-    
 
     <figure id="music-player">
       <audio controls>
@@ -81,5 +93,7 @@
       </audio>
     </figure>
     <script type="text/javascript" src="src/main.js"></script>
+    <script type="text/javascript" src="src/question.js"></script>
+    <script type="text/javascript" src="src/questionService.js"></script>
   </body>
 </html>

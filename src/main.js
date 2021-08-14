@@ -36,11 +36,34 @@ const getQuestions = () => {
     .then((res) => res.json())
     .then((data) => {
       let question = "";
-      data.map(function (qInfo) {
+      console.log(data);
+      /*data.map(function (qInfo) {
+        //console.log(qInfo);
         question += `<div> <h3> ${qInfo.content} </h3> </div> `;
-      });
-      let qContainer = document.getElementById("question-container");
-      qContainer.innerHTML = question;
+      });*/
+      let tab1content = "";
+      let tab2content = "";
+      let tab3content = "";
+      for (i = 0; i < 9; i++) {
+        if (i % 3 == 0 && i != 0) {
+          let tab_id = "tab" + i / 3;
+          console.log(tab_id);
+          let qContainer = document.getElementById(tab_id);
+          qContainer.innerHTML = tab1content;
+          console.log(qContainer);
+          tab1content = "";
+        } else {
+          tab1content += "<h2>" + data[i].content + "</h2>";
+          tab1content +=
+            "<input type='radio' name='q"+i+"' value='" +data[i].answer_a +"' /> " +data[i].answer_a;
+          tab1content +=" <input type='radio' name='q"+i+"' value='" +data[i].answer_b +"' />" +data[i].answer_b;
+          tab1content +=" <input type='radio' name='q"+i+"' value='" +data[i].answer_c + "' />" + data[i].answer_c;
+          console.log(tab1content);
+        }
+      }
+      let qContainer = document.getElementById("tab3");
+      qContainer.innerHTML = tab1content;
+      //qContainer.innerHTML = question;
     });
 };
 

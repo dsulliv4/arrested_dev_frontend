@@ -1,1 +1,13 @@
-// resposible for handling fetch requests from front end to back end 
+class QuestionService {
+
+  constructor(question) {
+    this.baseUrl = `http://localhost:3000/api/v1/questions/${question.id}`;
+  }
+
+  async getQuestion() {
+    const response = await fetch(this.baseUrl);
+    return await response.json();
+  }
+
+}
+

@@ -1,51 +1,87 @@
 class Question {
-
-  constructor(id, question_number, content, answer_a, answer_b, answer_c){
-      this.id = id;
-      this.question_number = question_number;
-      this.content = content;
-      this.answer_a = answer_a;
-      this.answer_b = answer_b;
-      this.answer_c = answer_c;
-   }
-  
+  constructor(id, question_number, content, answer_a, answer_b, answer_c) {
+    this.id = id;
+    this.question_number = question_number;
+    this.content = content;
+    this.answer_a = answer_a;
+    this.answer_b = answer_b;
+    this.answer_c = answer_c;
+  }
 }
 
-renderQuestion(question) {
-  DOMElements.quiz_container.style.display = "table";
-  const q = document.createElement("p");
+var currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the current tab
 
-  q.innerHTML = `${question.question_number}. ${question.content}`;
-  DOMElements.quiz_form.appendChild(q);
+function showTab(n) {
+  // This function will display the specified tab of the form...
+  var x = document.getElementsByClassName("tab");
+  x[n].style.display = "block";
+  //... and fix the Previous/Next buttons:
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+  }
+  if (n == x.length - 1) {
+    document.getElementById("nextBtn").innerHTML = "Submit";
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Next";
+  }
+  //... and run a function that will display the correct step indicator:
+  fixStepIndicator(n);
+}
 
-  for (let i = 1; i < 4; i++) {
-    const div = document.createElement("div");
-    const answer = document.createElement("input");
-    const answer_text = document.createElement("label");
+function nextPrev(n) {
+  // This function will figure out which tab to display
+  var x = document.getElementsByClassName("tab");
+  // Exit the function if any field in the current tab is invalid:
+  if (n == 1 && !validateForm()) return false;
+  // Hide the current tab:
+  x[currentTab].style.display = "none";
+  // Increase or decrease the current tab by 1:
+  currentTab = currentTab + n;
+  // if you have reached the end of the form...
+  if (currentTab >= x.length) {
+    // ... the form gets submitted:
+    document.getElementById("regForm").submit();
+    return false;
+  }
+  // Otherwise, display the correct tab:
+  showTab(currentTab);
+}
 
-    answer.setAttribute("type", "radio");
-    answer.setAttribute("name", question.id);
-    answer.setAttribute("class", "form-check-input");
-    answer.setAttribute("id", "user_input");
-    answer_text.className = "form-check-label";
+function validateForm() {
+  // This function deals with validation of the form fields
+  var x,
+    y,
+    i,
+    valid = true;
+  x = document.getElementsByClassName("tab");
+  y = x[currentTab].getElementsByTagName("input");
+  // A loop that checks every input field in the current tab:
+  for (i = 0; i < y.length; i++) {
+    // If a field is empty...
+    if (y[i].value == "") {
+      // add an "invalid" class to the field:
+      y[i].className += " invalid";
+      // and set the current valid status to false
+      valid = true;
+    }
+  }
+  // If the valid status is true, mark the step as finished and valid:
+  if (valid) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+  return valid; // return the valid status
+}
 
-
-    switch (i) {
-      case 1:
-        answer.setAttribute("value", "A");
-        answer_text.innerText = ` ${question.answer_a}`;
-        break;
-      case 2:
-        answer.setAttribute("value", "B");
-        answer_text.innerText = ` ${question.answer_b}`;
-        break;
-      case 3:
-        answer.setAttribute("value", "C");
-        answer_text.innerText = ` ${question.answer_c}`;
-        break;
-
-  
-    };
-
-end 
-end 
+function fixStepIndicator(n) {
+  // This function removes the "active" class of all steps...
+  var i,
+    x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  //... and adds the "active" class on the current step:
+  x[n].className += " active";
+}
