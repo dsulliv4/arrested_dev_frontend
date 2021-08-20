@@ -67,6 +67,8 @@ const getQuestions = () => {
     });
 };
 
+
+
 const continueBtn = () => {
   const button = document.querySelector("#continue");
   button.addEventListener("click", () => {

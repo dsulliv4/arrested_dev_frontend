@@ -39,10 +39,8 @@ h2 {
   display: none;
 }
 
-#question-container {
-}
 
-#element.style.css = 
+
 
 .quiz {
   position: static;
@@ -137,9 +135,6 @@ h2 {
   font-size: 28px;
 }
 
-.info {
-
-}
 
 #info {
   font-size: 20px;
@@ -186,13 +181,13 @@ input.invalid {
 }
 
 button {
-  background-color: #04AA6D;
-  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  background-color: white;
   border: none;
   padding: 10px 20px;
   font-size: 17px;
-  font-family: Raleway;
-  cursor: pointer;
+
 }
 
 button:hover {
