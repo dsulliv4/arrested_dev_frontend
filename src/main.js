@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   continueBtn();
   exitMain();
   returnMain();
+  yesBtn();
 });
 
 const readyNoButton = () => {
@@ -55,9 +56,26 @@ const getQuestions = () => {
         } else {
           tab1content += "<h2>" + data[i].content + "</h2>";
           tab1content +=
-            "<input type='radio' name='q"+i+"' value='" +data[i].answer_a +"' /> " +data[i].answer_a;
-          tab1content +=" <input type='radio' name='q"+i+"' value='" +data[i].answer_b +"' />" +data[i].answer_b;
-          tab1content +=" <input type='radio' name='q"+i+"' value='" +data[i].answer_c + "' />" + data[i].answer_c;
+            "<input type='radio' name='q" +
+            i +
+            "' value='" +
+            data[i].answer_a +
+            "' /> " +
+            data[i].answer_a;
+          tab1content +=
+            " <input type='radio' name='q" +
+            i +
+            "' value='" +
+            data[i].answer_b +
+            "' />" +
+            data[i].answer_b;
+          tab1content +=
+            " <input type='radio' name='q" +
+            i +
+            "' value='" +
+            data[i].answer_c +
+            "' />" +
+            data[i].answer_c;
           console.log(tab1content);
         }
       }
@@ -67,11 +85,18 @@ const getQuestions = () => {
     });
 };
 
-
+const yesBtn = () => {
+  const button = document.querySelector("#yes");
+  button.addEventListener("click", () => {
+    console.log("IN HERE");
+    document.querySelector(".container").classList.remove("hideEle");
+  });
+};
 
 const continueBtn = () => {
   const button = document.querySelector("#continue");
   button.addEventListener("click", () => {
+    document.getElementById("regForm").style.display = "block";
     getQuestions();
     var hideRules = document.getElementById("stepTwo");
     console.log(hideRules);

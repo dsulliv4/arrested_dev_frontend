@@ -216,5 +216,9 @@ button:hover {
 
 /* Mark the steps that are finished and valid: */
 .step.finish {
-  background-color: #04AA6D;
+  background-color: white;
+}
+
+#regForm {
+  display:none;
 }
