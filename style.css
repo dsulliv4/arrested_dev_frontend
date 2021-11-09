@@ -64,9 +64,11 @@ h2 {
 #hide {
   display: none;
 }
+
 .hideEle {
   visibility: hidden;
-}
+} 
+
 .showEle {
   display: block;
 }

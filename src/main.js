@@ -9,7 +9,6 @@ const stepOne = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("hello");
   stepOne();
   readyNoButton();
   continueBtn();
