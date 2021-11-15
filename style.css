@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Patua+One&display=swap");
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   --hue: var(--hue-neutral);
   padding: 0;
@@ -20,19 +24,19 @@ h2 {
 }
 
 .tobiasImage {
-  width: 40%;
-  display: block;
+  display:flex;
+  align-items:center;
+  width: 60%;
   margin-left: auto;
   margin-right: auto;
 }
 
 #tobiasCrying {
-  display: block;
   top: 10px;
   text-align: center;
   margin: 0 auto;
-  width: 40%;
-  height: 40%;
+  width: 80%;
+  height: 60%;
 }
 
 .invisible {
@@ -124,8 +128,8 @@ h2 {
   font-size: 20px;
   font-weight: bold;
   padding: 10px 20px;
-  display: flex;
   justify-content: center;
+  
 }
 
 #enter-buttons {
@@ -143,13 +147,9 @@ h2 {
 }
 
 
-* {
-  box-sizing: border-box;
-}
 
-body {
-  background-color: #f1f1f1;
-}
+
+
 
 #regForm {
   background-color: #ffffff;
@@ -183,7 +183,7 @@ input.invalid {
 }
 
 button {
-  display: flex;
+  
   justify-content: center;
   background-color: white;
   border: none;
