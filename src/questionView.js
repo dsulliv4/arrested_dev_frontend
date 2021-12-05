@@ -24,6 +24,7 @@ class QuestionView {
         ${this.question.answer_c} <input type="radio" value="c" name="question_${this.question.id}_answer" />
         </label>
       </fieldset>`;
+      
 
     return html;
   }

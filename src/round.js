@@ -1,3 +1,6 @@
+import Question from './question.js'
+
+
 class Round {
   constructor(attributes = {}) {
     this.id = attributes['id']

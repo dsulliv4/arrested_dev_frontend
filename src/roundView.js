@@ -12,6 +12,7 @@ class RoundView {
         return new QuestionView(question).render();
       })
       .join('')}
+      <input type="submit">Submit</input> 
   </form> 
      `;
 
