@@ -1,6 +1,8 @@
 import RoundView from './roundView.js';
 import Round from './round.js';
 import RoundRepository from './roundRepository.js';
+import UserAnswerRepository from './userAnswerRepository.js'
+import UserAnswer from './userAnswer.js'
 
 const stepOne = () => {
   const yesButton = document.querySelector('#yes');
@@ -43,8 +45,8 @@ const loadRound = (roundNumber) => {
         const key = QA[0]
         const value = QA[1]
         const question_id = key.match(/\d+/)[0];
-        const userAnswer = new UserAnswer({ question_id, value });
-        // save to repository // 
+        const userAnswer = new UserAnswer({ question_id, user_input: value });
+        userAnswerRepository.saveUserAnswer(userAnswer);
       }
       
     });
@@ -61,6 +63,7 @@ const readyNoButton = () => {
   });
 };
 
+// build out this function
 const audioPLay = () => {
   const audio = document.querySelector('audio');
 };
