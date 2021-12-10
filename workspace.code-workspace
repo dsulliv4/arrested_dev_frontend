@@ -1,11 +1,11 @@
 {
-	"folders": [
-		{
-			"path": "../arrested_dev_backend"
-		},
-		{
-			"path": "."
-		}
-	],
-	"settings": {}
+  "folders": [
+	{
+		"path": "."
+	},
+	{
+		"path": "../arrested_dev_backend"
+	}
+],
+  "settings": {}
 }
