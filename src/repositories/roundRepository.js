@@ -1,4 +1,4 @@
-import Round from './round.js';
+import Round from '../models/round.js';
 
 class RoundRepository {
   async fetchRound(roundNumber) {

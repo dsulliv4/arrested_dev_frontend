@@ -1,8 +1,9 @@
-import RoundView from './roundView.js';
-import Round from './round.js';
-import RoundRepository from './roundRepository.js';
-import UserAnswerRepository from './userAnswerRepository.js'
-import UserAnswer from './userAnswer.js'
+import RoundView from './views/roundView.js';
+import Round from './models/round.js';
+import RoundRepository from './repositories/roundRepository.js';
+import UserAnswerRepository from './repositories/userAnswerRepository.js';
+import UserAnswer from './models/userAnswer.js';
+import UserAnswerView from './views/userAnswerView.js';
 
 const stepOne = () => {
   const yesButton = document.querySelector('#yes');
@@ -26,10 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 let currentRound = 1;
+const totalRounds = 3;
+const roundRepository = new RoundRepository();
+const userAnswerRepository = new UserAnswerRepository();
 
 const loadRound = (roundNumber) => {
-  const roundRepository = new RoundRepository();
-  const userAnswerRepository = new UserAnswerRepository();
   roundRepository.fetchRound(currentRound).then((round) => {
     const roundView = new RoundView(round);
     const form = document.getElementById('form-container');
@@ -42,15 +44,38 @@ const loadRound = (roundNumber) => {
       console.log(data);
       window.formData = data;
       for (let QA of data.entries()) {
-        const key = QA[0]
-        const value = QA[1]
+        const key = QA[0];
+        const value = QA[1];
         const question_id = key.match(/\d+/)[0];
         const userAnswer = new UserAnswer({ question_id, user_input: value });
         userAnswerRepository.saveUserAnswer(userAnswer);
       }
-      
+      loadNextRound();
     });
   });
+};
+
+const loadNextRound = () => {
+  const removeForm = document.getElementById(`round-form-${currentRound}`);
+  if (!removeForm) {
+    console.warn('form not found');
+    return;
+  }
+  removeForm.remove();
+  currentRound++;
+  if (currentRound <= totalRounds) {
+    loadRound(currentRound);
+  } else {
+    const formContainer = document.getElementById('form-container');
+    formContainer.insertAdjacentHTML('beforeend', '<h1>Your Results: </h1>');
+    userAnswerRepository.all().then((userAnswers) => {
+      let userAnswerView;
+      userAnswers.forEach((userAnswer) => {
+        userAnswerView = new UserAnswerView(userAnswer);
+        formContainer.insertAdjacentHTML('beforeend', userAnswerView.render());
+      });
+    });
+  }
 };
 
 const readyNoButton = () => {
