@@ -116,7 +116,7 @@ const returnMain = () => {
   const button = document.querySelector('#returnBtn');
   button.addEventListener('click', () => {
     window.location = 'index.html';
-  });
+  })
 };
 
 const exitMain = () => {
