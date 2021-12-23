@@ -6,16 +6,13 @@ class UserAnswerView {
 
   render() {
     return `
+    <div class ="all_answers">
       <div class="user_answer">
-        <div class="user_answer__question_id">
-          ${this.userAnswer.question_id}.
+          ${this.userAnswer.question_id}. ${this.userAnswer.correct ? 'Right! ' : 'Totally wrong'} <br>
         </div>
-        <div class="user_answer__correct">
-          ${this.userAnswer.correct ? 'Right! ' : 'Totally wrong'}
-        </div>
-        <br>
-        <br>
-      </div>
+    </div>
+     
+    
     `;
   }
 }
