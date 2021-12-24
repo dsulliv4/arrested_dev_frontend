@@ -227,6 +227,12 @@ button {
 
 }
 
+#returnHome {
+  position: fixed;
+  bottom: 250px;
+  left: 650px;
+}
+
 button:hover {
   opacity: 0.8;
 }

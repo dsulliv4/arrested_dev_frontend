@@ -101,10 +101,14 @@ const gameOverActions = () => {
   return actions;
 }
 
+
 const returnToHome = () => {
   const button = "<div> <button id='returnHome'>Return Home</button></div>";
   return button;
 }
+
+
+
 
 const showGameOverActions = (formContainer) => {
   formContainer.insertAdjacentHTML('beforeend', gameOverActions());
@@ -117,7 +121,12 @@ const showGameOverActions = (formContainer) => {
   quit.addEventListener('click', function() {
     document.querySelector('#tobiasCrying').classList.remove('hideEle');
     document.querySelector('#form-container').classList.add('hideEle');
-    window.insertAdjacentHTML('beforeend', returnToHome());
+    const parentDiv = document.getElementById('tobiasImage');
+    parentDiv.insertAdjacentHTML('beforeend', returnToHome());
+    parentDiv.addEventListener('click', () => {
+      window.location.href = '/';
+    })
+
     
   })
 }
